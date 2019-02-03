@@ -77,6 +77,7 @@ import UIKit
     private func setup() {
         addConstrainedSubview(stackView, constrain: .leftMargin, .rightMargin, .topMargin, .bottomMargin)
         stackView.axis = .vertical
+        setContentCompressionResistancePriority(.required, for: .vertical)
         spacing = { spacing }()
     }
 
@@ -125,6 +126,7 @@ class RadioGroupItem: UIView {
         addConstrainedSubview(stackView, constrain: .left, .right, .top, .bottom)
         stackView.addArrangedSubviews([radioButton, titleLabel])
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didSelect)))
+        setContentCompressionResistancePriority(.required, for: .vertical)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -140,6 +142,7 @@ extension UIStackView {
     func removeAllArrangedSubviews() {
         for subview in arrangedSubviews.reversed() {
             removeArrangedSubview(subview)
+            subview.removeFromSuperview()
         }
     }
 

@@ -45,6 +45,10 @@ import UIKit
 
     private func setup() {
         constrain(self, at: .width, to: self, at: .height)
+        setContentHuggingPriority(.required, for: .vertical)
+        setContentHuggingPriority(.required, for: .horizontal)
+        setContentCompressionResistancePriority(.required, for: .vertical)
+        setContentCompressionResistancePriority(.required, for: .horizontal)
         addConstrainedSubview(selectedCenterView, constrain: .topMargin, .bottomMargin, .leftMargin, .rightMargin)
         selectedCenterView.layoutMargins = .zero
         selectedColor = { selectedColor }()
