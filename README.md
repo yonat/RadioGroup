@@ -1,3 +1,5 @@
+<img align="right" src="Screenshots/RadioGroup.png">
+
 # RadioGroup
 
 [![Swift Version][swift-image]][swift-url]
@@ -6,8 +8,6 @@
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/RadioGroup.svg)](https://img.shields.io/cocoapods/v/RadioGroup.svg)  
 [![Platform](https://img.shields.io/cocoapods/p/RadioGroup.svg?style=flat)](http://cocoapods.org/pods/RadioGroup)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
-<img align="right" src="Screenshots/RadioGroup.png">
 
 The missing iOS radio buttons group.
 
