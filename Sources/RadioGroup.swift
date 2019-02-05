@@ -9,6 +9,11 @@ import MiniLayout
 import UIKit
 
 @IBDesignable open class RadioGroup: UIControl {
+    public convenience init(titles: [String]) {
+        self.init(frame: .zero)
+        self.titles = titles
+    }
+
     open var titles: [String] = [] {
         didSet {
             stackView.removeAllArrangedSubviews()
@@ -26,12 +31,8 @@ import UIKit
 
     @IBInspectable open var selectedIndex: Int = -1 {
         didSet {
-            if oldValue >= 0 {
-                (stackView.arrangedSubviews[oldValue] as? RadioGroupItem)?.radioButton.isSelected = false
-            }
-            if selectedIndex >= 0 && selectedIndex < stackView.arrangedSubviews.count {
-                (stackView.arrangedSubviews[selectedIndex] as? RadioGroupItem)?.radioButton.isSelected = true
-            }
+            item(at: oldValue)?.radioButton.isSelected = false
+            item(at: selectedIndex)?.radioButton.isSelected = true
         }
     }
 
@@ -72,6 +73,8 @@ import UIKit
         }
     }
 
+    // MARK: - Private
+
     private let stackView = UIStackView()
 
     private func setup() {
@@ -79,6 +82,11 @@ import UIKit
         stackView.axis = .vertical
         setContentCompressionResistancePriority(.required, for: .vertical)
         spacing = { spacing }()
+    }
+
+    private func item(at index: Int) -> RadioGroupItem? {
+        guard index >= 0 && index < stackView.arrangedSubviews.count else { return nil }
+        return stackView.arrangedSubviews[index] as? RadioGroupItem
     }
 
     private func forEachItem(_ perform: (RadioGroupItem) -> Void) {
@@ -89,11 +97,6 @@ import UIKit
         guard let index = stackView.arrangedSubviews.firstIndex(of: item) else { return }
         selectedIndex = index
         sendActions(for: [.valueChanged, .primaryActionTriggered])
-    }
-
-    convenience init(titles: [String]) {
-        self.init(frame: .zero)
-        self.titles = titles
     }
 
     public override init(frame: CGRect) {
@@ -127,6 +130,9 @@ class RadioGroupItem: UIView {
         stackView.addArrangedSubviews([radioButton, titleLabel])
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didSelect)))
         setContentCompressionResistancePriority(.required, for: .vertical)
+        isAccessibilityElement = true
+        accessibilityLabel = "option"
+        accessibilityValue = title
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -135,6 +141,14 @@ class RadioGroupItem: UIView {
 
     @objc func didSelect() {
         group.selectIndex(item: self)
+    }
+
+    override var accessibilityTraits: UIAccessibilityTraits {
+        get {
+            return radioButton.isSelected ? [.selected] : []
+        }
+        // swiftlint:disable next unused_setter_value
+        set {}
     }
 }
 

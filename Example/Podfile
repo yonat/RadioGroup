@@ -14,5 +14,5 @@ target 'RadioGroupDemo' do
     scripts
 end
 
-#target 'RadioGroupDemoUITests' do
-#end
+target 'RadioGroupDemoUITests' do
+end

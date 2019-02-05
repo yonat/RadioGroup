@@ -7,16 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32A81D50D0AB79B2A9975D03 /* Pods_RadioGroupDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7444FA01459CECCEF2DF41B /* Pods_RadioGroupDemoUITests.framework */; };
 		D968844E49169589D1A419AB /* Pods_RadioGroupDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA3C484C93971D081DA35EA /* Pods_RadioGroupDemo.framework */; };
 		DC52B4F92207208D00A01098 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52B4F82207208D00A01098 /* AppDelegate.swift */; };
 		DC52B4FB2207208D00A01098 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52B4FA2207208D00A01098 /* ViewController.swift */; };
 		DC52B4FE2207208D00A01098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC52B4FC2207208D00A01098 /* Main.storyboard */; };
 		DC52B5002207209000A01098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC52B4FF2207209000A01098 /* Assets.xcassets */; };
 		DC52B5032207209000A01098 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC52B5012207209000A01098 /* LaunchScreen.storyboard */; };
+		DC52B52522092D5300A01098 /* RadioGroupDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52B52422092D5300A01098 /* RadioGroupDemoUITests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DC52B52722092D5300A01098 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC52B4ED2207208D00A01098 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC52B4F42207208D00A01098;
+			remoteInfo = RadioGroupDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0DEB7E4B851FF4E856820862 /* Pods-RadioGroupDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioGroupDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RadioGroupDemoUITests/Pods-RadioGroupDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1EDBF5EDBAA3EE4CCDB74138 /* Pods-RadioGroupDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioGroupDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RadioGroupDemo/Pods-RadioGroupDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		2D222438FD3F3A2787ADE90C /* Pods-RadioGroupDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioGroupDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-RadioGroupDemoUITests/Pods-RadioGroupDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		30764401FB8D00740C99587D /* Pods-RadioGroupDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioGroupDemo.debug.xcconfig"; path = "Target Support Files/Pods-RadioGroupDemo/Pods-RadioGroupDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		441A036CE6BC1B782C0ADE0B /* Pods-RadioGroupDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioGroupDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RadioGroupDemo/Pods-RadioGroupDemo.release.xcconfig"; sourceTree = "<group>"; };
 		87FEA1D20B8C6DB82926DC9C /* Pods-RadioGroupDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioGroupDemo.release.xcconfig"; path = "Target Support Files/Pods-RadioGroupDemo/Pods-RadioGroupDemo.release.xcconfig"; sourceTree = "<group>"; };
 		8DA3C484C93971D081DA35EA /* Pods_RadioGroupDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RadioGroupDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC52B4F52207208D00A01098 /* RadioGroupDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioGroupDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +44,10 @@
 		DC52B5042207209000A01098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC52B50C22074A6000A01098 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		DC52B50D22074A6000A01098 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DC52B52222092D5300A01098 /* RadioGroupDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioGroupDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC52B52422092D5300A01098 /* RadioGroupDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGroupDemoUITests.swift; sourceTree = "<group>"; };
+		DC52B52622092D5300A01098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7444FA01459CECCEF2DF41B /* Pods_RadioGroupDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RadioGroupDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +59,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC52B51F22092D5300A01098 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32A81D50D0AB79B2A9975D03 /* Pods_RadioGroupDemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				8DA3C484C93971D081DA35EA /* Pods_RadioGroupDemo.framework */,
+				F7444FA01459CECCEF2DF41B /* Pods_RadioGroupDemoUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -55,6 +84,10 @@
 			children = (
 				30764401FB8D00740C99587D /* Pods-RadioGroupDemo.debug.xcconfig */,
 				87FEA1D20B8C6DB82926DC9C /* Pods-RadioGroupDemo.release.xcconfig */,
+				1EDBF5EDBAA3EE4CCDB74138 /* Pods-RadioGroupDemo.debug.xcconfig */,
+				441A036CE6BC1B782C0ADE0B /* Pods-RadioGroupDemo.release.xcconfig */,
+				0DEB7E4B851FF4E856820862 /* Pods-RadioGroupDemoUITests.debug.xcconfig */,
+				2D222438FD3F3A2787ADE90C /* Pods-RadioGroupDemoUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -65,6 +98,7 @@
 				DC52B50C22074A6000A01098 /* CHANGELOG.md */,
 				DC52B50D22074A6000A01098 /* README.md */,
 				DC52B4F72207208D00A01098 /* RadioGroupDemo */,
+				DC52B52322092D5300A01098 /* RadioGroupDemoUITests */,
 				DC52B4F62207208D00A01098 /* Products */,
 				8A47C8CE86EC6B1D5EA15AE9 /* Pods */,
 				465CA14F05DEC33F9D5FC6CC /* Frameworks */,
@@ -75,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				DC52B4F52207208D00A01098 /* RadioGroupDemo.app */,
+				DC52B52222092D5300A01098 /* RadioGroupDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +125,15 @@
 				DC52B5042207209000A01098 /* Info.plist */,
 			);
 			path = RadioGroupDemo;
+			sourceTree = "<group>";
+		};
+		DC52B52322092D5300A01098 /* RadioGroupDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DC52B52422092D5300A01098 /* RadioGroupDemoUITests.swift */,
+				DC52B52622092D5300A01098 /* Info.plist */,
+			);
+			path = RadioGroupDemoUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,18 +161,43 @@
 			productReference = DC52B4F52207208D00A01098 /* RadioGroupDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DC52B52122092D5300A01098 /* RadioGroupDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC52B52B22092D5300A01098 /* Build configuration list for PBXNativeTarget "RadioGroupDemoUITests" */;
+			buildPhases = (
+				107229C6E31B2CA9A0476376 /* [CP] Check Pods Manifest.lock */,
+				DC52B51E22092D5300A01098 /* Sources */,
+				DC52B51F22092D5300A01098 /* Frameworks */,
+				DC52B52022092D5300A01098 /* Resources */,
+				14054626CC72ED7D348C42CF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC52B52822092D5300A01098 /* PBXTargetDependency */,
+			);
+			name = RadioGroupDemoUITests;
+			productName = RadioGroupDemoUITests;
+			productReference = DC52B52222092D5300A01098 /* RadioGroupDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		DC52B4ED2207208D00A01098 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Yonat Sharon";
 				TargetAttributes = {
 					DC52B4F42207208D00A01098 = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					DC52B52122092D5300A01098 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = DC52B4F42207208D00A01098;
 					};
 				};
 			};
@@ -146,6 +215,7 @@
 			projectRoot = "";
 			targets = (
 				DC52B4F42207208D00A01098 /* RadioGroupDemo */,
+				DC52B52122092D5300A01098 /* RadioGroupDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -161,9 +231,62 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC52B52022092D5300A01098 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		107229C6E31B2CA9A0476376 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RadioGroupDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14054626CC72ED7D348C42CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RadioGroupDemoUITests/Pods-RadioGroupDemoUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MiniLayout/MiniLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/RadioGroup/RadioGroup.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MiniLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RadioGroup.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RadioGroupDemoUITests/Pods-RadioGroupDemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		46BCE48673B8D1D6CD98E4AF /* [CP-User] SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,7 +402,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC52B51E22092D5300A01098 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC52B52522092D5300A01098 /* RadioGroupDemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC52B52822092D5300A01098 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC52B4F42207208D00A01098 /* RadioGroupDemo */;
+			targetProxy = DC52B52722092D5300A01098 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DC52B4FC2207208D00A01098 /* Main.storyboard */ = {
@@ -453,6 +592,46 @@
 			};
 			name = Release;
 		};
+		DC52B52922092D5300A01098 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DEB7E4B851FF4E856820862 /* Pods-RadioGroupDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RadioGroupDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roysharon.RadioGroupDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RadioGroupDemo;
+			};
+			name = Debug;
+		};
+		DC52B52A22092D5300A01098 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D222438FD3F3A2787ADE90C /* Pods-RadioGroupDemoUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RadioGroupDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roysharon.RadioGroupDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RadioGroupDemo;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -470,6 +649,15 @@
 			buildConfigurations = (
 				DC52B5082207209000A01098 /* Debug */,
 				DC52B5092207209000A01098 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC52B52B22092D5300A01098 /* Build configuration list for PBXNativeTarget "RadioGroupDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC52B52922092D5300A01098 /* Debug */,
+				DC52B52A22092D5300A01098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

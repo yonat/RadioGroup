@@ -2,9 +2,6 @@ PODS:
   - MiniLayout (1.4.0)
   - RadioGroup (1.0.1):
     - MiniLayout
-    - RadioGroup/Resources (= 1.0.1)
-  - RadioGroup/Resources (1.0.1):
-    - MiniLayout
 
 DEPENDENCIES:
   - RadioGroup (from `..`)
@@ -19,8 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   MiniLayout: e35331ce9ab50a4111c3f91deca158834f86d9e7
-  RadioGroup: 3a0554fe9ce1fbf3c01c14f71e2ff6a6037ee698
+  RadioGroup: 4e8a4fe724a3374abbcd78367b6f852ea188e3be
 
-PODFILE CHECKSUM: b6318aa40de86b0e333d36e4f9924f62c738379c
+PODFILE CHECKSUM: 4300267a4f85df5fc4200e0037ebbc9dd35e388a
 
 COCOAPODS: 1.6.0.beta.2

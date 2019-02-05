@@ -11,6 +11,11 @@ import UIKit
     @IBInspectable open var isSelected: Bool = false {
         didSet {
             selectedCenterView.isHidden = !isSelected
+            if isSelected {
+                accessibilityTraits.insert(.selected)
+            } else {
+                accessibilityTraits.remove(.selected)
+            }
         }
     }
 
@@ -57,6 +62,9 @@ import UIKit
         ringSpacing = { ringSpacing }()
         isSelected = { isSelected }()
         tintColorDidChange()
+        isAccessibilityElement = true
+        accessibilityLabel = "radio button"
+        accessibilityTraits = [.button]
     }
 
     private func updateCenterRadius() {
