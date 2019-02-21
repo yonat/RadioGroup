@@ -67,9 +67,24 @@ import UIKit
         }
     }
 
+    @IBInspectable open var titleColor: UIColor? {
+        didSet {
+            guard titleColor != oldValue else { return }
+            forEachItem { $0.titleLabel.textColor = titleColor }
+        }
+    }
+
     open var titleAlignment: NSTextAlignment = .natural {
         didSet {
             forEachItem { $0.titleLabel.textAlignment = titleAlignment }
+        }
+    }
+
+    open var titleFont: UIFont? {
+        didSet {
+            guard titleFont != oldValue else { return }
+            let newFont = titleFont ?? UIFont.systemFont(ofSize: UIFont.labelFontSize)
+            forEachItem { $0.titleLabel.font = newFont }
         }
     }
 
@@ -82,6 +97,7 @@ import UIKit
         stackView.axis = .vertical
         setContentCompressionResistancePriority(.required, for: .vertical)
         spacing = { spacing }()
+        accessibilityIdentifier = "RadioGroup"
     }
 
     private func item(at index: Int) -> RadioGroupItem? {
@@ -125,14 +141,22 @@ class RadioGroupItem: UIView {
     init(title: String, group: RadioGroup) {
         self.group = group
         super.init(frame: .zero)
+
         titleLabel.text = title
+        if let titleFont = group.titleFont {
+            titleLabel.font = titleFont
+        }
+
         addConstrainedSubview(stackView, constrain: .left, .right, .top, .bottom)
         stackView.addArrangedSubviews([radioButton, titleLabel])
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didSelect)))
         setContentCompressionResistancePriority(.required, for: .vertical)
+
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didSelect)))
+
         isAccessibilityElement = true
         accessibilityLabel = "option"
         accessibilityValue = title
+        accessibilityIdentifier = "RadioGroupItem"
     }
 
     required init?(coder aDecoder: NSCoder) {

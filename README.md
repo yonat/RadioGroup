@@ -28,11 +28,14 @@ radioGroup.titleAlignment = .right
 radioGroup.isButtonAfterTitle = true // default is false => button left (leading) relative to title
 ```
 
-Color:
+Color and Font:
 
 ```swift
 radioGroup.tintColor = .green // surrounding ring
-radioGroup.selectedColor = .red // center circle
+radioGroup.selectedColor = .red // center circle (default is same color as ring)
+
+radioGroup.titleColor = .blue
+radioGroup.titleFont = myFont
 ```
 
 Size:

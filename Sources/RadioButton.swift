@@ -65,6 +65,7 @@ import UIKit
         isAccessibilityElement = true
         accessibilityLabel = "radio button"
         accessibilityTraits = [.button]
+        accessibilityIdentifier = "RadioButton"
     }
 
     private func updateCenterRadius() {

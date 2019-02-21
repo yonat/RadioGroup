@@ -26,6 +26,9 @@ class ViewController: UIViewController {
         ]
 
         radioGroup.addTarget(self, action: #selector(didSelectOption(radioGroup:)), for: .valueChanged)
+
+        secondGroup.titleFont = UIFont(name: "Courier", size: UIFont.labelFontSize)
+        secondGroup.titleColor = .brown
     }
 
     @objc func didSelectOption(radioGroup: RadioGroup) {
