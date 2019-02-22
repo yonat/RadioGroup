@@ -146,6 +146,9 @@ class RadioGroupItem: UIView {
         if let titleFont = group.titleFont {
             titleLabel.font = titleFont
         }
+        if let titleColor = group.titleColor {
+            titleLabel.textColor = titleColor
+        }
 
         addConstrainedSubview(stackView, constrain: .left, .right, .top, .bottom)
         stackView.addArrangedSubviews([radioButton, titleLabel])
