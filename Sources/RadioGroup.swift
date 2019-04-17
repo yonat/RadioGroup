@@ -14,19 +14,37 @@ import UIKit
         self.titles = titles
     }
 
+    public convenience init(attributedTitles: [NSAttributedString]) {
+        self.init(frame: .zero)
+        self.attributedTitles = attributedTitles
+    }
+
     open var titles: [String] = [] {
         didSet {
             stackView.removeAllArrangedSubviews()
             stackView.addArrangedSubviews(titles.map { RadioGroupItem(title: $0, group: self) })
 
-            // update every forEachItem
-            selectedColor = { selectedColor }()
-            buttonSize = { buttonSize }()
-            itemSpacing = { itemSpacing }()
-            isButtonAfterTitle = { isButtonAfterTitle }()
-            titleAlignment = { titleAlignment }()
-            selectedIndex = { selectedIndex }()
+            updateProperties()
         }
+    }
+
+    open var attributedTitles: [NSAttributedString] = [] {
+        didSet {
+            stackView.removeAllArrangedSubviews()
+            stackView.addArrangedSubviews(attributedTitles.map { RadioGroupItem(attributedTitle: $0, group: self) })
+
+            updateProperties()
+        }
+    }
+
+    private func updateProperties() {
+        // update every forEachItem
+        selectedColor = { selectedColor }()
+        buttonSize = { buttonSize }()
+        itemSpacing = { itemSpacing }()
+        isButtonAfterTitle = { isButtonAfterTitle }()
+        titleAlignment = { titleAlignment }()
+        selectedIndex = { selectedIndex }()
     }
 
     @IBInspectable open var selectedIndex: Int = -1 {
@@ -141,6 +159,7 @@ class RadioGroupItem: UIView {
     init(title: String, group: RadioGroup) {
         self.group = group
         super.init(frame: .zero)
+        accessibilityValue = title
 
         titleLabel.text = title
         if let titleFont = group.titleFont {
@@ -150,6 +169,24 @@ class RadioGroupItem: UIView {
             titleLabel.textColor = titleColor
         }
 
+        commonInit()
+    }
+
+    init(attributedTitle: NSAttributedString, group: RadioGroup) {
+        self.group = group
+        super.init(frame: .zero)
+        accessibilityValue = attributedTitle.string
+
+        titleLabel.attributedText = attributedTitle
+
+        commonInit()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func commonInit() {
         addConstrainedSubview(stackView, constrain: .left, .right, .top, .bottom)
         stackView.addArrangedSubviews([radioButton, titleLabel])
         setContentCompressionResistancePriority(.required, for: .vertical)
@@ -158,12 +195,7 @@ class RadioGroupItem: UIView {
 
         isAccessibilityElement = true
         accessibilityLabel = "option"
-        accessibilityValue = title
         accessibilityIdentifier = "RadioGroupItem"
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     @objc func didSelect() {
