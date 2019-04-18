@@ -77,6 +77,18 @@ import UIKit
             forEachItem { $0.stackView.spacing = itemSpacing }
         }
     }
+    
+    @IBInspectable open var itemStackViewAlignment: UIStackView.Alignment = .fill {
+        didSet {
+            forEachItem { $0.stackView.alignment = itemStackViewAlignment }
+        }
+    }
+    
+    @IBInspectable open var multilineLabel: Bool = false {
+        didSet {
+            forEachItem { $0.titleLabel.numberOfLines = multilineLabel ? 0 : 1 }
+        }
+    }
 
     @IBInspectable open var isButtonAfterTitle: Bool = false {
         didSet {
@@ -187,6 +199,8 @@ class RadioGroupItem: UIView {
     }
 
     private func commonInit() {
+        titleLabel.numberOfLines = group.multilineLabel ? 0 : 1
+        stackView.alignment = group.itemStackViewAlignment
         addConstrainedSubview(stackView, constrain: .left, .right, .top, .bottom)
         stackView.addArrangedSubviews([radioButton, titleLabel])
         setContentCompressionResistancePriority(.required, for: .vertical)
