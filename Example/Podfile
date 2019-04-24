@@ -2,16 +2,25 @@ platform :ios, '9.0'
 
 use_frameworks!
 pod 'RadioGroup', :path => '..'
+pod 'SwiftQuality', :git => 'https://github.com/yonat/SwiftQuality'
 
 # code quality scripts
 def scripts
-    script_phase :name => 'SwiftFormat', :execution_position => :before_compile, :script => 'if [ "Debug" = "${CONFIGURATION}" ]; then cd "${SRCROOT}/.."; swiftformat; fi'
-    script_phase :name => 'SwiftLintAutocorrect', :execution_position => :before_compile, :script => 'if [ "Debug" = "${CONFIGURATION}" ]; then cd "${SRCROOT}/.."; swiftlint autocorrect; fi'
-    script_phase :name => 'SwiftLint', :execution_position => :after_compile, :script => 'if [ "Debug" = "${CONFIGURATION}" ]; then cd "${SRCROOT}/.."; swiftlint; fi'
+  script_phase :name => 'SwiftFormat',
+    :execution_position => :before_compile,
+    :script => 'if [ "Debug" == "${CONFIGURATION}" ]; then ${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat --swiftversion ${SWIFT_VERSION} --config ${PODS_ROOT}/SwiftQuality/.swiftformat ${SRCROOT}/.. ; fi'
+
+  script_phase :name => 'SwiftLintAutocorrect',
+    :execution_position => :before_compile,
+    :script => 'if [ "Debug" == "${CONFIGURATION}" ]; then ${PODS_ROOT}/SwiftLint/swiftlint autocorrect --config ${PODS_ROOT}/SwiftQuality/.swiftlint.yml --path ${SRCROOT}/.. ; fi'
+
+  script_phase :name => 'SwiftLint',
+    :execution_position => :after_compile,
+    :script => 'if [ "Debug" == "${CONFIGURATION}" ]; then ${PODS_ROOT}/SwiftLint/swiftlint --config ${PODS_ROOT}/SwiftQuality/.swiftlint.yml --path ${SRCROOT}/.. ; fi'
 end
 
 target 'RadioGroupDemo' do
-    scripts
+  scripts
 end
 
 target 'RadioGroupDemoUITests' do

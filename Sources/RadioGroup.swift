@@ -106,7 +106,7 @@ import UIKit
     }
 
     private func forEachItem(_ perform: (RadioGroupItem) -> Void) {
-        stackView.arrangedSubviews.compactMap { $0 as? RadioGroupItem } .forEach(perform)
+        stackView.arrangedSubviews.compactMap { $0 as? RadioGroupItem }.forEach(perform)
     }
 
     func selectIndex(item: RadioGroupItem) {
@@ -174,8 +174,7 @@ class RadioGroupItem: UIView {
         get {
             return radioButton.isSelected ? [.selected] : []
         }
-        // swiftlint:disable next unused_setter_value
-        set {}
+        set {} // swiftlint:disable:this unused_setter_value
     }
 }
 

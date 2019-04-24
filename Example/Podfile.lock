@@ -1,23 +1,41 @@
 PODS:
   - MiniLayout (1.4.0)
-  - RadioGroup (1.0.1):
+  - RadioGroup (1.2.1):
     - MiniLayout
+  - SwiftFormat/CLI (0.40.8)
+  - SwiftLint (0.31.0)
+  - SwiftQuality (1.0.0):
+    - SwiftFormat/CLI (= 0.40.8)
+    - SwiftLint (= 0.31.0)
 
 DEPENDENCIES:
   - RadioGroup (from `..`)
+  - SwiftQuality (from `https://github.com/yonat/SwiftQuality`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - MiniLayout
+    - SwiftFormat
+    - SwiftLint
 
 EXTERNAL SOURCES:
   RadioGroup:
     :path: ".."
+  SwiftQuality:
+    :git: https://github.com/yonat/SwiftQuality
+
+CHECKOUT OPTIONS:
+  SwiftQuality:
+    :commit: 24a5bde541616f55ab250ed4a93a1d3397d44b9d
+    :git: https://github.com/yonat/SwiftQuality
 
 SPEC CHECKSUMS:
   MiniLayout: e35331ce9ab50a4111c3f91deca158834f86d9e7
-  RadioGroup: 4e8a4fe724a3374abbcd78367b6f852ea188e3be
+  RadioGroup: b351a229602fc9ce2262f5048d23cd96527349de
+  SwiftFormat: d9e5ca1aed735164fe9d26510ec508ddb8a93598
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  SwiftQuality: 7e8e9783387fc64d0ad6f8a315507c9c0013dee8
 
-PODFILE CHECKSUM: 4300267a4f85df5fc4200e0037ebbc9dd35e388a
+PODFILE CHECKSUM: 5f7d5a9f9077301bba844d9cb456944c79f8170e
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.6.1

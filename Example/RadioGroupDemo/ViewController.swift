@@ -10,7 +10,6 @@ import RadioGroup
 import UIKit
 
 class ViewController: UIViewController {
-
     @IBOutlet var radioGroup: RadioGroup!
     @IBOutlet var secondGroup: RadioGroup!
 

@@ -77,7 +77,7 @@ import UIKit
         setup()
     }
 
-    required public init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
     }
