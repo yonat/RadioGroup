@@ -36,51 +36,51 @@ import UIKit
         }
     }
 
-    @IBInspectable open var selectedColor: UIColor? {
+    @IBInspectable open dynamic var selectedColor: UIColor? {
         didSet {
             forEachItem { $0.radioButton.selectedColor = selectedColor }
         }
     }
 
-    @IBInspectable open var buttonSize: CGFloat = 20 {
+    @IBInspectable open dynamic var buttonSize: CGFloat = 20 {
         didSet {
             forEachItem { $0.radioButton.size = buttonSize }
         }
     }
 
-    @IBInspectable open var spacing: CGFloat = 8 {
+    @IBInspectable open dynamic var spacing: CGFloat = 8 {
         didSet {
             stackView.spacing = spacing
         }
     }
 
-    @IBInspectable open var itemSpacing: CGFloat = 4 {
+    @IBInspectable open dynamic var itemSpacing: CGFloat = 4 {
         didSet {
             forEachItem { $0.stackView.spacing = itemSpacing }
         }
     }
 
-    @IBInspectable open var isButtonAfterTitle: Bool = false {
+    @IBInspectable open dynamic var isButtonAfterTitle: Bool = false {
         didSet {
             let direction: UISemanticContentAttribute = isButtonAfterTitle ? .forceRightToLeft : .unspecified
             forEachItem { $0.stackView.semanticContentAttribute = direction }
         }
     }
 
-    @IBInspectable open var titleColor: UIColor? {
+    @IBInspectable open dynamic var titleColor: UIColor? {
         didSet {
             guard titleColor != oldValue else { return }
             forEachItem { $0.titleLabel.textColor = titleColor }
         }
     }
 
-    open var titleAlignment: NSTextAlignment = .natural {
+    @objc open dynamic var titleAlignment: NSTextAlignment = .natural {
         didSet {
             forEachItem { $0.titleLabel.textAlignment = titleAlignment }
         }
     }
 
-    open var titleFont: UIFont? {
+    @objc open dynamic var titleFont: UIFont? {
         didSet {
             guard titleFont != oldValue else { return }
             let newFont = titleFont ?? UIFont.systemFont(ofSize: UIFont.labelFontSize)

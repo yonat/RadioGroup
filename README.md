@@ -21,6 +21,8 @@ radioGroup.addTarget(self, action: #selector(optionSelected), forControlEvents: 
 
 ### Changing Appearance
 
+The properties below can be set in Interface Builder, in code, or through a UIAppearance proxy (e.g., `RadioGroup.appearance().titleColor = .red`).
+
 Layout:
 
 ```swift
