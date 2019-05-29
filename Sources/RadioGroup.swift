@@ -30,6 +30,8 @@ import UIKit
 
     open var attributedTitles: [NSAttributedString] = [] {
         didSet {
+            titles = attributedTitles.map { $0.string }
+            
             stackView.removeAllArrangedSubviews()
             stackView.addArrangedSubviews(attributedTitles.map { RadioGroupItem(attributedTitle: $0, group: self) })
 
@@ -40,6 +42,8 @@ import UIKit
     private func updateProperties() {
         // update every forEachItem
         selectedColor = { selectedColor }()
+        selectedRingColor = { selectedRingColor }()
+        normalRingColor = { normalRingColor }()
         buttonSize = { buttonSize }()
         itemSpacing = { itemSpacing }()
         isButtonAfterTitle = { isButtonAfterTitle }()
@@ -57,6 +61,18 @@ import UIKit
     @IBInspectable open var selectedColor: UIColor? {
         didSet {
             forEachItem { $0.radioButton.selectedColor = selectedColor }
+        }
+    }
+
+    @IBInspectable open var selectedRingColor: UIColor? {
+        didSet {
+            forEachItem { $0.radioButton.selectedRingColor = selectedRingColor }
+        }
+    }
+
+    @IBInspectable open var normalRingColor: UIColor? {
+        didSet {
+            forEachItem { $0.radioButton.normalRingColor = normalRingColor }
         }
     }
 
@@ -84,9 +100,9 @@ import UIKit
         }
     }
     
-    @IBInspectable open var multilineLabel: Bool = false {
+    @IBInspectable open var multilineLabels: Bool = true {
         didSet {
-            forEachItem { $0.titleLabel.numberOfLines = multilineLabel ? 0 : 1 }
+            forEachItem { $0.titleLabel.numberOfLines = multilineLabels ? 0 : 1 }
         }
     }
 
@@ -199,7 +215,7 @@ class RadioGroupItem: UIView {
     }
 
     private func commonInit() {
-        titleLabel.numberOfLines = group.multilineLabel ? 0 : 1
+        titleLabel.numberOfLines = group.multilineLabels ? 0 : 1
         stackView.alignment = group.itemStackViewAlignment
         addConstrainedSubview(stackView, constrain: .left, .right, .top, .bottom)
         stackView.addArrangedSubviews([radioButton, titleLabel])

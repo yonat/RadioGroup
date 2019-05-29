@@ -11,6 +11,13 @@ import UIKit
     @IBInspectable open var isSelected: Bool = false {
         didSet {
             selectedCenterView.isHidden = !isSelected
+            
+            if let selectedRingColor = selectedRingColor, isSelected {
+                layer.borderColor = selectedRingColor.cgColor
+            } else if let normalRingColor = normalRingColor, !isSelected {
+                layer.borderColor = normalRingColor.cgColor
+            }
+
             if isSelected {
                 accessibilityTraits.insert(.selected)
             } else {
@@ -45,7 +52,23 @@ import UIKit
             selectedCenterView.backgroundColor = selectedColor ?? actualTintColor
         }
     }
-
+    
+    @IBInspectable open var selectedRingColor: UIColor? {
+        didSet {
+            if let selectedRingColor = selectedRingColor, isSelected {
+                layer.borderColor = selectedRingColor.cgColor
+            }
+        }
+    }
+    
+    @IBInspectable open var normalRingColor: UIColor? {
+        didSet {
+            if let normalRingColor = normalRingColor, !isSelected {
+                layer.borderColor = normalRingColor.cgColor
+            }
+        }
+    }
+    
     private let selectedCenterView = UIView()
 
     private func setup() {
@@ -57,6 +80,8 @@ import UIKit
         addConstrainedSubview(selectedCenterView, constrain: .topMargin, .bottomMargin, .leftMargin, .rightMargin)
         selectedCenterView.layoutMargins = .zero
         selectedColor = { selectedColor }()
+        selectedRingColor = { selectedRingColor }()
+        normalRingColor = { normalRingColor }()
         size = { size }()
         ringWidth = { ringWidth }()
         ringSpacing = { ringSpacing }()
