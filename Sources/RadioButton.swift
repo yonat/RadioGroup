@@ -24,6 +24,7 @@ import UIKit
             constrain(.height, to: size)
             layer.cornerRadius = size / 2
             updateCenterRadius()
+            invalidateIntrinsicContentSize()
         }
     }
 
@@ -89,6 +90,10 @@ import UIKit
         if nil == selectedColor {
             selectedCenterView.backgroundColor = newTint
         }
+    }
+
+    open override var intrinsicContentSize: CGSize {
+        return CGSize(width: size, height: size)
     }
 }
 

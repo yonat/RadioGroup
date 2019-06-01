@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.orgd/spec/v2.0.0
 ### Added
 - UIAppearance support.
 
+### Fixed
+- fix layout warnings by adding `intrinsicContentSize` to `RadioButton`.
+
 ## [1.2.1] - 2019-02-22
 
 ### Fixed
