@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.orgd/spec/v2.0.0
 
 ### Added
 - UIAppearance support.
+- multiline labels.
 
 ### Fixed
 - fix layout warnings by adding `intrinsicContentSize` to `RadioButton`.

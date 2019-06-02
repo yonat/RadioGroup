@@ -142,6 +142,7 @@ class RadioGroupItem: UIView {
         self.group = group
         super.init(frame: .zero)
 
+        titleLabel.numberOfLines = 0
         titleLabel.text = title
         if let titleFont = group.titleFont {
             titleLabel.font = titleFont
@@ -152,6 +153,7 @@ class RadioGroupItem: UIView {
 
         addConstrainedSubview(stackView, constrain: .left, .right, .top, .bottom)
         stackView.addArrangedSubviews([radioButton, titleLabel])
+        stackView.alignment = .center
         setContentCompressionResistancePriority(.required, for: .vertical)
 
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didSelect)))

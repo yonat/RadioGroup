@@ -27,7 +27,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JdL-tG-jdB" customClass="RadioButton" customModule="RadioGroup">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdL-tG-jdB" customClass="RadioButton" customModule="RadioGroup">
                                 <rect key="frame" x="0.0" y="0.0" width="110" height="71"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,7 +47,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSelected" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QNu-Q0-E73" customClass="RadioGroup" customModule="RadioGroup">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QNu-Q0-E73" customClass="RadioGroup" customModule="RadioGroup">
                                 <rect key="frame" x="60" y="441" width="240" height="206"/>
                                 <color key="tintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
@@ -73,6 +73,7 @@
                             <constraint firstItem="JdL-tG-jdB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aCf-ey-aRB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="JdL-tG-jdB" secondAttribute="top" constant="-80" id="d62-RX-y7c"/>
                             <constraint firstItem="A6O-1P-60f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="keG-lN-I7W"/>
+                            <constraint firstItem="QNu-Q0-E73" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="qJw-YF-VWN"/>
                             <constraint firstItem="QNu-Q0-E73" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qfw-dd-PBc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
