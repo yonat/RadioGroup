@@ -21,7 +21,7 @@ radioGroup.addTarget(self, action: #selector(optionSelected), forControlEvents: 
 
 ### Changing Appearance
 
-The properties below can be set in Interface Builder, in code, or through a UIAppearance proxy (e.g., `RadioGroup.appearance().titleColor = .red`).
+The properties below can be set in Interface Builder, in code, or through a `UIAppearance` proxy (e.g., `RadioGroup.appearance().titleColor = .red`).
 
 Layout:
 
@@ -33,8 +33,8 @@ radioGroup.isButtonAfterTitle = true // default is false => button left (leading
 Color and Font:
 
 ```swift
-radioGroup.tintColor = .green // surrounding ring
-radioGroup.selectedColor = .red // center circle (default is same color as ring)
+radioGroup.tintColor = .green       // surrounding ring
+radioGroup.selectedColor = .red     // inner circle (default is same color as ring)
 
 radioGroup.titleColor = .blue
 radioGroup.titleFont = myFont
@@ -44,8 +44,17 @@ Size:
 
 ```swift
 radioGroup.buttonSize = 42.0
-radioGroup.spacing = 12 // vertical spacing between options
-radioGroup.itemSpacing = 12 // horizontal spacing between button and title
+radioGroup.spacing = 12             // vertical spacing between options
+radioGroup.itemSpacing = 12         // horizontal spacing between button and title
+```
+
+Button appearance:
+
+```swift
+RadioButton.appearance().size = 32              // height=width of button
+RadioButton.appearance().ringWidth = 3
+RadioButton.appearance().ringSpacing = 7        // space between outer ring and inner circle
+RadioButton.appearance().selectedColor = .blue  // color of inner circle
 ```
 
 ## Installation

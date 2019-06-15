@@ -19,7 +19,7 @@ import UIKit
         }
     }
 
-    @IBInspectable open var size: CGFloat = 20 {
+    @IBInspectable open dynamic var size: CGFloat = 20 {
         didSet {
             constrain(.height, to: size)
             layer.cornerRadius = size / 2
@@ -28,20 +28,20 @@ import UIKit
         }
     }
 
-    @IBInspectable open var ringWidth: CGFloat = 2 {
+    @IBInspectable open dynamic var ringWidth: CGFloat = 2 {
         didSet {
             layer.borderWidth = ringWidth
         }
     }
 
-    @IBInspectable open var ringSpacing: CGFloat = 4 {
+    @IBInspectable open dynamic var ringSpacing: CGFloat = 4 {
         didSet {
             layoutMargins = UIEdgeInsets(top: ringSpacing, left: ringSpacing, bottom: ringSpacing, right: ringSpacing)
             updateCenterRadius()
         }
     }
 
-    @IBInspectable open var selectedColor: UIColor? {
+    @IBInspectable open dynamic var selectedColor: UIColor? {
         didSet {
             selectedCenterView.backgroundColor = selectedColor ?? actualTintColor
         }
