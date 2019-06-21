@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/yonatsharon"
 
   s.swift_version = '4.2'
+  s.swift_versions = ['4.2', '5.0']
   s.platform     = :ios, "9.0"
   s.requires_arc = true
 
