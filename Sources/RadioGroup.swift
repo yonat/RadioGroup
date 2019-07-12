@@ -5,7 +5,7 @@
 //  Created by Yonat Sharon on 03.02.2019.
 //
 
-import MiniLayout
+import SweeterSwift
 import UIKit
 
 @IBDesignable open class RadioGroup: UIControl {
@@ -16,7 +16,7 @@ import UIKit
 
     open var titles: [String] = [] {
         didSet {
-            stackView.removeAllArrangedSubviews()
+            stackView.removeAllArrangedSubviewsCompletely()
             stackView.addArrangedSubviews(titles.map { RadioGroupItem(title: $0, group: self) })
 
             // update every forEachItem
@@ -181,13 +181,6 @@ class RadioGroupItem: UIView {
 }
 
 extension UIStackView {
-    func removeAllArrangedSubviews() {
-        for subview in arrangedSubviews.reversed() {
-            removeArrangedSubview(subview)
-            subview.removeFromSuperview()
-        }
-    }
-
     func addArrangedSubviews(_ subviews: [UIView]) {
         for subview in subviews {
             addArrangedSubview(subview)

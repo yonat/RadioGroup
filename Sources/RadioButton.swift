@@ -96,13 +96,3 @@ import UIKit
         return CGSize(width: size, height: size)
     }
 }
-
-extension UIView {
-    var actualTintColor: UIColor {
-        var tintedView: UIView? = self
-        while let currentView = tintedView, nil == currentView.tintColor {
-            tintedView = currentView.superview
-        }
-        return tintedView?.tintColor ?? .blue
-    }
-}

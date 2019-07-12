@@ -21,6 +21,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/yonat/RadioGroup.git", :tag => s.version }
   s.source_files  = "Sources/*.swift"
 
-  s.dependency 'MiniLayout'
+  s.dependency 'SweeterSwift'
 
 end
