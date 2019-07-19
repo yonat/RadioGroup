@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,6 +25,10 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
                                         <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVertical" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdL-tG-jdB" customClass="RadioButton" customModule="RadioGroup">
@@ -69,10 +73,9 @@
                         <constraints>
                             <constraint firstItem="A6O-1P-60f" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="41m-mu-Skb"/>
                             <constraint firstItem="QNu-Q0-E73" firstAttribute="top" secondItem="A6O-1P-60f" secondAttribute="bottom" constant="50" id="HgA-IV-1r1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A6O-1P-60f" secondAttribute="trailing" constant="50" id="Qcc-rw-2dw"/>
                             <constraint firstItem="JdL-tG-jdB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aCf-ey-aRB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="JdL-tG-jdB" secondAttribute="top" constant="-80" id="d62-RX-y7c"/>
-                            <constraint firstItem="A6O-1P-60f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="keG-lN-I7W"/>
+                            <constraint firstItem="A6O-1P-60f" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jtO-dY-XPa"/>
                             <constraint firstItem="QNu-Q0-E73" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="qJw-YF-VWN"/>
                             <constraint firstItem="QNu-Q0-E73" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qfw-dd-PBc"/>
                         </constraints>

@@ -26,8 +26,9 @@ The properties below can be set in Interface Builder, in code, or through a `UIA
 Layout:
 
 ```swift
+radioGroup.isVertical = false           // default is true => buttons are stacked vertically
 radioGroup.titleAlignment = .right
-radioGroup.isButtonAfterTitle = true // default is false => button left (leading) relative to title
+radioGroup.isButtonAfterTitle = true    // default is false => button left (leading) relative to title
 ```
 
 Color and Font:
@@ -44,7 +45,7 @@ Size:
 
 ```swift
 radioGroup.buttonSize = 42.0
-radioGroup.spacing = 12             // vertical spacing between options
+radioGroup.spacing = 12             // spacing between buttons
 radioGroup.itemSpacing = 12         // horizontal spacing between button and title
 ```
 

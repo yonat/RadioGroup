@@ -42,6 +42,12 @@ import UIKit
         }
     }
 
+    @IBInspectable open dynamic var isVertical: Bool = true {
+        didSet {
+            stackView.axis = isVertical ? .vertical : .horizontal
+        }
+    }
+
     @IBInspectable open dynamic var buttonSize: CGFloat = 20 {
         didSet {
             forEachItem { $0.radioButton.size = buttonSize }
@@ -94,8 +100,8 @@ import UIKit
 
     private func setup() {
         addConstrainedSubview(stackView, constrain: .leftMargin, .rightMargin, .topMargin, .bottomMargin)
-        stackView.axis = .vertical
         setContentCompressionResistancePriority(.required, for: .vertical)
+        isVertical = { isVertical }()
         spacing = { spacing }()
         accessibilityIdentifier = "RadioGroup"
     }
@@ -143,6 +149,7 @@ class RadioGroupItem: UIView {
         super.init(frame: .zero)
 
         titleLabel.numberOfLines = 0
+        titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.text = title
         if let titleFont = group.titleFont {
             titleLabel.font = titleFont
@@ -150,9 +157,11 @@ class RadioGroupItem: UIView {
         if let titleColor = group.titleColor {
             titleLabel.textColor = titleColor
         }
+        let wrapper = UIView()
+        wrapper.addConstrainedSubview(titleLabel, constrain: .top, .bottom, .left, .right)
 
         addConstrainedSubview(stackView, constrain: .left, .right, .top, .bottom)
-        stackView.addArrangedSubviews([radioButton, titleLabel])
+        stackView.addArrangedSubviews([radioButton, wrapper])
         stackView.alignment = .center
         setContentCompressionResistancePriority(.required, for: .vertical)
 
