@@ -14,18 +14,25 @@ import UIKit
         self.titles = titles
     }
 
-    open var titles: [String] = [] {
-        didSet {
+    open var titles: [String?] {
+        get {
+            return items.map { $0.titleLabel.text }
+        }
+        set {
             stackView.removeAllArrangedSubviewsCompletely()
-            stackView.addArrangedSubviews(titles.map { RadioGroupItem(title: $0, group: self) })
+            stackView.addArrangedSubviews(newValue.map { RadioGroupItem(title: $0, group: self) })
+            updateAllItems()
+        }
+    }
 
-            // update every forEachItem
-            selectedColor = { selectedColor }()
-            buttonSize = { buttonSize }()
-            itemSpacing = { itemSpacing }()
-            isButtonAfterTitle = { isButtonAfterTitle }()
-            titleAlignment = { titleAlignment }()
-            selectedIndex = { selectedIndex }()
+    open var attributedTitles: [NSAttributedString?] {
+        get {
+            return items.map { $0.titleLabel.attributedText }
+        }
+        set {
+            stackView.removeAllArrangedSubviewsCompletely()
+            stackView.addArrangedSubviews(newValue.map { RadioGroupItem(attributedTitle: $0, group: self) })
+            updateAllItems()
         }
     }
 
@@ -97,6 +104,9 @@ import UIKit
     // MARK: - Private
 
     private let stackView = UIStackView()
+    private var items: [RadioGroupItem] {
+        return stackView.arrangedSubviews.compactMap { $0 as? RadioGroupItem }
+    }
 
     private func setup() {
         addConstrainedSubview(stackView, constrain: .leftMargin, .rightMargin, .topMargin, .bottomMargin)
@@ -106,13 +116,22 @@ import UIKit
         accessibilityIdentifier = "RadioGroup"
     }
 
+    private func updateAllItems() {
+        selectedColor = { selectedColor }()
+        buttonSize = { buttonSize }()
+        itemSpacing = { itemSpacing }()
+        isButtonAfterTitle = { isButtonAfterTitle }()
+        titleAlignment = { titleAlignment }()
+        selectedIndex = { selectedIndex }()
+    }
+
     private func item(at index: Int) -> RadioGroupItem? {
         guard index >= 0 && index < stackView.arrangedSubviews.count else { return nil }
         return stackView.arrangedSubviews[index] as? RadioGroupItem
     }
 
     private func forEachItem(_ perform: (RadioGroupItem) -> Void) {
-        stackView.arrangedSubviews.compactMap { $0 as? RadioGroupItem }.forEach(perform)
+        items.forEach(perform)
     }
 
     func selectIndex(item: RadioGroupItem) {
@@ -144,13 +163,27 @@ class RadioGroupItem: UIView {
 
     unowned var group: RadioGroup
 
-    init(title: String, group: RadioGroup) {
+    init(title: String?, group: RadioGroup) {
         self.group = group
         super.init(frame: .zero)
+        titleLabel.text = title
+        setup()
+    }
 
+    init(attributedTitle: NSAttributedString?, group: RadioGroup) {
+        self.group = group
+        super.init(frame: .zero)
+        titleLabel.attributedText = attributedTitle
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setup() {
         titleLabel.numberOfLines = 0
         titleLabel.lineBreakMode = .byWordWrapping
-        titleLabel.text = title
         if let titleFont = group.titleFont {
             titleLabel.font = titleFont
         }
@@ -169,12 +202,8 @@ class RadioGroupItem: UIView {
 
         isAccessibilityElement = true
         accessibilityLabel = "option"
-        accessibilityValue = title
+        accessibilityValue = titleLabel.text
         accessibilityIdentifier = "RadioGroupItem"
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     @objc func didSelect() {

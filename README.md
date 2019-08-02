@@ -41,6 +41,15 @@ radioGroup.titleColor = .blue
 radioGroup.titleFont = myFont
 ```
 
+Or use attributed strings:
+
+```swift
+radioGroup.attributedTitles = [
+    NSAttributedString(string: "Italic", attributes: [.obliqueness: 0.3]),
+    NSAttributedString(string: "Underline", attributes: [.underlineStyle: 1]),
+]
+```
+
 Size:
 
 ```swift
@@ -76,11 +85,9 @@ Copy `Sources/*.swift` and [`MiniLayout.swift`](https://github.com/yonat/MiniLay
 
 [https://github.com/yonat/RadioGroup](https://github.com/yonat/RadioGroup)
 
-[swift-image]:https://img.shields.io/badge/swift-4.2-orange.svg
+[swift-image]:https://img.shields.io/badge/swift-5.0-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE.txt
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[codebeat-image]: https://codebeat.co/badges/c19b47ea-2f9d-45df-8458-b2d952fe9dad
-[codebeat-url]: https://codebeat.co/projects/github-com-vsouza-awesomeios-com
