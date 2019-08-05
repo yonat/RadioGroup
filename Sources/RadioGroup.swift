@@ -110,6 +110,7 @@ import UIKit
 
     private func setup() {
         addConstrainedSubview(stackView, constrain: .leftMargin, .rightMargin, .topMargin, .bottomMargin)
+        stackView.distribution = .equalSpacing
         setContentCompressionResistancePriority(.required, for: .vertical)
         isVertical = { isVertical }()
         spacing = { spacing }()
