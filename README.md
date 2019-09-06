@@ -75,9 +75,13 @@ RadioButton.appearance().selectedColor = .blue  // color of inner circle
 pod 'RadioGroup'
 ```
 
-### Manually:
+### Swift Package Manager:
 
-Copy `Sources/*.swift` and [`MiniLayout.swift`](https://github.com/yonat/MiniLayout) to your Xcode project.
+```swift
+dependencies: [
+    .package(url: "https://github.com/yonat/RadioGroup", from: "1.3.2")
+]
+```
 
 ## Meta
 
