@@ -141,6 +141,8 @@ import UIKit
         sendActions(for: [.valueChanged, .primaryActionTriggered])
     }
 
+    // MARK: - Overrides
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -149,6 +151,13 @@ import UIKit
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
+    }
+
+    open override var intrinsicContentSize: CGSize {
+        var size = stackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size.width += layoutMargins.left + layoutMargins.right
+        size.height += layoutMargins.top + layoutMargins.bottom
+        return size
     }
 
     open override func prepareForInterfaceBuilder() {
