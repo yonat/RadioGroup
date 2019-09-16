@@ -15,6 +15,8 @@
 		DC52B5002207209000A01098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC52B4FF2207209000A01098 /* Assets.xcassets */; };
 		DC52B5032207209000A01098 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC52B5012207209000A01098 /* LaunchScreen.storyboard */; };
 		DC52B52522092D5300A01098 /* RadioGroupDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52B52422092D5300A01098 /* RadioGroupDemoUITests.swift */; };
+		DC64D10823306DB400506A50 /* RadioGroupPickerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64D10723306DB400506A50 /* RadioGroupPickerDemo.swift */; };
+		DC64D10B2330E40E00506A50 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC64D1092330E3A200506A50 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		DC52B52222092D5300A01098 /* RadioGroupDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioGroupDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC52B52422092D5300A01098 /* RadioGroupDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGroupDemoUITests.swift; sourceTree = "<group>"; };
 		DC52B52622092D5300A01098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC64D10723306DB400506A50 /* RadioGroupPickerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGroupPickerDemo.swift; sourceTree = "<group>"; };
+		DC64D1092330E3A200506A50 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		F7444FA01459CECCEF2DF41B /* Pods_RadioGroupDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RadioGroupDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -55,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC64D10B2330E40E00506A50 /* SwiftUI.framework in Frameworks */,
 				D968844E49169589D1A419AB /* Pods_RadioGroupDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +78,7 @@
 		465CA14F05DEC33F9D5FC6CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC64D1092330E3A200506A50 /* SwiftUI.framework */,
 				8DA3C484C93971D081DA35EA /* Pods_RadioGroupDemo.framework */,
 				F7444FA01459CECCEF2DF41B /* Pods_RadioGroupDemoUITests.framework */,
 			);
@@ -117,8 +123,9 @@
 		DC52B4F72207208D00A01098 /* RadioGroupDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DC52B4F82207208D00A01098 /* AppDelegate.swift */,
 				DC52B4FA2207208D00A01098 /* ViewController.swift */,
+				DC64D10723306DB400506A50 /* RadioGroupPickerDemo.swift */,
+				DC52B4F82207208D00A01098 /* AppDelegate.swift */,
 				DC52B4FC2207208D00A01098 /* Main.storyboard */,
 				DC52B4FF2207209000A01098 /* Assets.xcassets */,
 				DC52B5012207209000A01098 /* LaunchScreen.storyboard */,
@@ -398,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC52B4FB2207208D00A01098 /* ViewController.swift in Sources */,
+				DC64D10823306DB400506A50 /* RadioGroupPickerDemo.swift in Sources */,
 				DC52B4F92207208D00A01098 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

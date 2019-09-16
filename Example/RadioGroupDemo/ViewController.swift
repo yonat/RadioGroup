@@ -9,9 +9,14 @@
 import RadioGroup
 import UIKit
 
+#if canImport(SwiftUI)
+import SwiftUI
+#endif
+
 class ViewController: UIViewController {
     @IBOutlet var radioGroup: RadioGroup!
     @IBOutlet var secondGroup: RadioGroup!
+    @IBOutlet var showSwiftUIButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +35,25 @@ class ViewController: UIViewController {
         secondGroup.titleColor = .brown
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if #available(iOS 13.0, *) {
+            showSwiftUIButton.isHidden = false
+            showSwiftUIButton.layer.borderWidth = 1
+            showSwiftUIButton.layer.cornerRadius = showSwiftUIButton.frame.height / 2
+            showSwiftUIButton.layer.borderColor = view.actualTintColor.cgColor
+        }
+    }
+
     @objc func didSelectOption(radioGroup: RadioGroup) {
         print(radioGroup.titles[radioGroup.selectedIndex] ?? "")
+    }
+
+    @IBAction func showSwiftUIDemo() {
+        #if canImport(SwiftUI)
+        if #available(iOS 13.0, *) {
+            present(UIHostingController(rootView: RadioGroupPickerDemo()), animated: true)
+        }
+        #endif
     }
 }

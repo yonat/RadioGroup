@@ -11,7 +11,7 @@ let package = Package(
         .library(name: "RadioGroup", targets: ["RadioGroup"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/yonat/SweeterSwift", from: "1.0.2"),
+        .package(url: "https://github.com/yonat/SweeterSwift", from: "1.0.4"),
     ],
     targets: [
         .target(name: "RadioGroup", dependencies: ["SweeterSwift"], path: "Sources"),

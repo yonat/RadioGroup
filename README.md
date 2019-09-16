@@ -19,11 +19,18 @@ radioGroup.selectedIndex = 0
 radioGroup.addTarget(self, action: #selector(optionSelected), forControlEvents: .valueChanged)
 ```
 
-### Changing Appearance
+## SwiftUI Usage
+
+```swift
+RadioGroupPicker(selectedIndex: $selection, titles: ["One", "Two", "Three"])
+```
+
+## Changing Appearance
 
 The properties below can be set in Interface Builder, in code, or through a `UIAppearance` proxy (e.g., `RadioGroup.appearance().titleColor = .red`).
+When using SwiftUI you can set them in the `RadioGroupPicker` initializer .
 
-Layout:
+**Layout:**
 
 ```swift
 radioGroup.isVertical = false           // default is true => buttons are stacked vertically
@@ -31,7 +38,7 @@ radioGroup.titleAlignment = .right
 radioGroup.isButtonAfterTitle = true    // default is false => button left (leading) relative to title
 ```
 
-Color and Font:
+**Color and Font:**
 
 ```swift
 radioGroup.tintColor = .green       // surrounding ring
@@ -50,7 +57,7 @@ radioGroup.attributedTitles = [
 ]
 ```
 
-Size:
+**Size:**
 
 ```swift
 radioGroup.buttonSize = 42.0
@@ -58,7 +65,7 @@ radioGroup.spacing = 12             // spacing between buttons
 radioGroup.itemSpacing = 12         // horizontal spacing between button and title
 ```
 
-Button appearance:
+**Button appearance:**
 
 ```swift
 RadioButton.appearance().size = 32              // height=width of button
