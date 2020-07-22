@@ -31,7 +31,6 @@ import SwiftUI
         titleFont: UIFont? = nil
     ) {
         _selectedIndex = selectedIndex
-        uiView.translatesAutoresizingMaskIntoConstraints = false
         uiView.titles =? titles
         uiView.attributedTitles =? attributedTitles
         uiView.selectedColor =? selectedColor

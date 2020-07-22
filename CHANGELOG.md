@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.orgd/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- add SwiftUI view modifiers for appearance properties
+- add SwiftUI view modifiers for appearance properties.
+
+### Fixed
+- make SwiftUI frame correctly respond to `.fixedSize(horizontal: false, vertical: true)`.
 
 ## [1.4.0] - 2019-10-13
 
