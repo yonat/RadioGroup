@@ -28,7 +28,7 @@ RadioGroupPicker(selectedIndex: $selection, titles: ["One", "Two", "Three"])
 ## Changing Appearance
 
 The properties below can be set in Interface Builder, in code, or through a `UIAppearance` proxy (e.g., `RadioGroup.appearance().titleColor = .red`).
-When using SwiftUI you can set them in the `RadioGroupPicker` initializer .
+When using SwiftUI you can set them in the `RadioGroupPicker` initializer, or use as view modifiers (e.g., `.buttonSize(32)`). .
 
 **Layout:**
 
