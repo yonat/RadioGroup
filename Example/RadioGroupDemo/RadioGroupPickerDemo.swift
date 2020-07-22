@@ -17,28 +17,33 @@ struct RadioGroupPickerDemo: View {
     var body: some View {
         VStack {
             Spacer()
-            RadioGroupPicker(selectedIndex: $selectedIndex, titles: ["First", "Second", "Third", "Done"], isVertical: false, spacing: 16)
+
+            RadioGroupPicker(selectedIndex: $selectedIndex, titles: ["First", "Second", "Third", "Done"])
+                .isVertical(false)
+                .spacing(16)
                 .fixedSize()
                 .border(Color.accentColor)
+
             Spacer()
+
             RadioGroupPicker(selectedIndex: $selectedIndex, titles: ["One", "Two", "Three", "Jinx"])
                 .accentColor(.purple)
                 .fixedSize()
+
             Spacer()
-            RadioGroupPicker(
-                selectedIndex: $selectedIndex,
-                titles: ["אחת", "שתיים", "ו-ש-לוש", "הסוף!"],
-                selectedColor: .systemRed,
-                buttonSize: 32,
-                itemSpacing: 8,
-                titleColor: .systemGreen,
-                titleAlignment: .right
-            )
+
+            RadioGroupPicker(selectedIndex: $selectedIndex, titles: ["אחת", "שתיים", "ו-ש-לוש", "הסוף!"])
+                .selectedColor(.systemRed)
+                .buttonSize(32)
+                .itemSpacing(8)
+                .titleColor(.systemGreen)
+                .titleAlignment(.right)
                 .environment(\.layoutDirection, .rightToLeft)
                 .fixedSize()
                 .padding(8)
                 .border(Color.red)
                 .accentColor(.green)
+
             Spacer()
         }
         .padding()

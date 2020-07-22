@@ -71,4 +71,51 @@ import SwiftUI
     }
 }
 
+@available(iOS 13.0, *) public extension RadioGroupPicker {
+    func buttonSize(_ buttonSize: CGFloat) -> Self {
+        uiView.buttonSize = buttonSize
+        return self
+    }
+
+    func isButtonAfterTitle(_ isButtonAfterTitle: Bool) -> Self {
+        uiView.isButtonAfterTitle = isButtonAfterTitle
+        return self
+    }
+
+    func isVertical(_ isVertical: Bool) -> Self {
+        uiView.isVertical = isVertical
+        return self
+    }
+
+    func itemSpacing(_ itemSpacing: CGFloat) -> Self {
+        uiView.itemSpacing = itemSpacing
+        return self
+    }
+
+    func selectedColor(_ selectedColor: UIColor) -> Self {
+        uiView.selectedColor = selectedColor
+        return self
+    }
+
+    func spacing(_ spacing: CGFloat) -> Self {
+        uiView.spacing = spacing
+        return self
+    }
+
+    func titleAlignment(_ titleAlignment: NSTextAlignment) -> Self {
+        uiView.titleAlignment = titleAlignment
+        return self
+    }
+
+    func titleColor(_ titleColor: UIColor) -> Self {
+        uiView.titleColor = titleColor
+        return self
+    }
+
+    func titleFont(_ titleFont: UIFont) -> Self {
+        uiView.titleFont = titleFont
+        return self
+    }
+}
+
 #endif
