@@ -115,6 +115,11 @@ import SwiftUI
         uiView.titleFont = titleFont
         return self
     }
+
+    func tintColor(_ tintColor: UIColor) -> Self {
+        uiView.tintColor = tintColor
+        return self
+    }
 }
 
 #endif
