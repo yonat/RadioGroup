@@ -99,7 +99,10 @@ import UIKit
     @IBInspectable open dynamic var titleColor: UIColor? {
         didSet {
             guard titleColor != oldValue else { return }
-            forEachItem { $0.titleLabel.textColor = titleColor }
+            forEachItem {
+                $0.titleLabel.textColor = titleColor
+                $0.detailLabel.textColor = titleColor
+            }
         }
     }
 
@@ -113,7 +116,10 @@ import UIKit
         didSet {
             guard titleFont != oldValue else { return }
             let newFont = titleFont ?? UIFont.systemFont(ofSize: UIFont.labelFontSize)
-            forEachItem { $0.titleLabel.font = newFont }
+            forEachItem {
+                $0.titleLabel.font = newFont
+                $0.detailLabel.font = newFont
+            }
         }
     }
 
