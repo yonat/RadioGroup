@@ -13,6 +13,11 @@ import UIKit
         self.init(frame: .zero)
         self.titles = titles
     }
+    
+    public convenience init(options: [RadioOptionItem]) {
+        self.init(frame: .zero)
+        self.options = options
+    }
 
     open var titles: [String?] {
         get {
@@ -32,6 +37,17 @@ import UIKit
         set {
             stackView.removeAllArrangedSubviewsCompletely()
             stackView.addArrangedSubviews(newValue.map { RadioGroupItem(attributedTitle: $0, group: self) })
+            updateAllItems()
+        }
+    }
+    
+    open var options: [RadioOptionItem] {
+        get {
+            return items.map({ RadioOptionItem(title: $0.titleLabel.text, detail: $0.detailLabel.text) })
+        }
+        set {
+            stackView.removeAllArrangedSubviewsCompletely()
+            stackView.addArrangedSubviews(newValue.map({ RadioGroupItem(title: $0.title, subtitle: $0.detail, group: self) }))
             updateAllItems()
         }
     }
@@ -168,6 +184,7 @@ import UIKit
 
 class RadioGroupItem: UIView {
     let titleLabel = UILabel()
+    let detailLabel = UILabel()
     let radioButton = RadioButton()
     let stackView = UIStackView()
 
@@ -177,6 +194,15 @@ class RadioGroupItem: UIView {
         self.group = group
         super.init(frame: .zero)
         titleLabel.text = title
+        setup()
+    }
+    
+    init(title: String?, subtitle: String?, group: RadioGroup) {
+        print("did init option")
+        self.group = group
+        super.init(frame: .zero)
+        titleLabel.text = title
+        detailLabel.text = subtitle
         setup()
     }
 
@@ -194,14 +220,29 @@ class RadioGroupItem: UIView {
     private func setup() {
         titleLabel.numberOfLines = 0
         titleLabel.lineBreakMode = .byWordWrapping
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         if let titleFont = group.titleFont {
             titleLabel.font = titleFont
         }
         if let titleColor = group.titleColor {
             titleLabel.textColor = titleColor
         }
+        
+        detailLabel.textAlignment = .right
+        detailLabel.numberOfLines = 0
+        detailLabel.lineBreakMode = .byWordWrapping
+        detailLabel.translatesAutoresizingMaskIntoConstraints = false
+        if let titleFont = group.titleFont {
+            detailLabel.font = titleFont
+        }
+        detailLabel.textColor = .black
+        
         let wrapper = UIView()
-        wrapper.addConstrainedSubview(titleLabel, constrain: .top, .bottom, .left, .right)
+        wrapper.addSubview(titleLabel)
+        wrapper.addSubview(detailLabel)
+        wrapper.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[title]-[detail]|", options: .init(), metrics: nil, views: ["title" : titleLabel, "detail" : detailLabel]))
+        wrapper.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[title]|", options: .init(), metrics: nil, views: ["title" : titleLabel]))
+        wrapper.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[detail]|", options: .init(), metrics: nil, views: ["detail" : detailLabel]))
 
         addConstrainedSubview(stackView, constrain: .left, .right, .top, .bottom)
         stackView.addArrangedSubviews([radioButton, wrapper])
