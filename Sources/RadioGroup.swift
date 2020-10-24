@@ -39,6 +39,7 @@ import UIKit
     @IBInspectable open var selectedIndex: Int = -1 {
         didSet {
             item(at: oldValue)?.radioButton.isSelected = false
+            item(at: oldValue)?.borderColour = itemBorderColour
             item(at: selectedIndex)?.radioButton.isSelected = true
         }
     }
@@ -70,6 +71,12 @@ import UIKit
     @IBInspectable open dynamic var itemBorderColour: UIColor = .clear {
         didSet {
             forEachItem { $0.borderColour = itemBorderColour }
+        }
+    }
+
+    @IBInspectable open dynamic var selectedItemBorderColour: UIColor = .clear {
+        didSet {
+            forEachItem { $0.selectedBorderColour = selectedItemBorderColour }
         }
     }
 
@@ -226,6 +233,8 @@ class RadioGroupItem: UIView {
         }
     }
 
+    var selectedBorderColour: UIColor = .clear
+
     var innerPadding: UIEdgeInsets = .zero {
         didSet {
             stackView.layoutMargins = innerPadding
@@ -280,6 +289,7 @@ class RadioGroupItem: UIView {
 
     @objc func didSelect() {
         group.selectIndex(item: self)
+        layer.borderColor = selectedBorderColour.cgColor
     }
 
     override var accessibilityTraits: UIAccessibilityTraits {
