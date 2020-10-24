@@ -33,6 +33,12 @@ class ViewController: UIViewController {
 
         secondGroup.titleFont = UIFont(name: "Courier", size: UIFont.labelFontSize)
         secondGroup.titleColor = .brown
+        // This are the optinal properties
+        secondGroup.itemHeight = 80
+        secondGroup.itemBorderWidth = 1
+        secondGroup.itemBorderColour = .red
+        secondGroup.itemCornerRadius = 5
+        secondGroup.itemInnerPadding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
 
     override func viewDidAppear(_ animated: Bool) {
