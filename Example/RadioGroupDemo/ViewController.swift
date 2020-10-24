@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         secondGroup.itemBorderWidth = 1
         secondGroup.itemBorderColour = .red
         secondGroup.itemCornerRadius = 5
+        secondGroup.selectedItemBorderColour = .green
         secondGroup.itemInnerPadding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
 
