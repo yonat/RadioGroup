@@ -61,6 +61,36 @@ import UIKit
         }
     }
 
+    @IBInspectable open dynamic var itemHeight: CGFloat = 80 {
+        didSet {
+            forEachItem { $0.fixedHeight = itemHeight }
+        }
+    }
+
+    @IBInspectable open dynamic var itemBorderColour: UIColor = .clear {
+        didSet {
+            forEachItem { $0.borderColour = itemBorderColour }
+        }
+    }
+
+    @IBInspectable open dynamic var itemBorderWidth: CGFloat = 1 {
+        didSet {
+            forEachItem { $0.borderWidth = itemBorderWidth }
+        }
+    }
+
+    @IBInspectable open dynamic var itemCornerRadius: CGFloat = 0 {
+        didSet {
+            forEachItem { $0.cornerRadius = itemCornerRadius }
+        }
+    }
+
+    open dynamic var itemInnerPadding: UIEdgeInsets = .zero {
+        didSet {
+            forEachItem { $0.innerPadding = itemInnerPadding }
+        }
+    }
+
     @IBInspectable open dynamic var spacing: CGFloat = 8 {
         didSet {
             stackView.spacing = spacing
@@ -170,6 +200,38 @@ class RadioGroupItem: UIView {
     let titleLabel = UILabel()
     let radioButton = RadioButton()
     let stackView = UIStackView()
+
+    var fixedHeight: CGFloat = 20 {
+        didSet {
+            constrain(.height, to: fixedHeight)
+            invalidateIntrinsicContentSize()
+        }
+    }
+
+    var borderWidth: CGFloat = 1 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+    }
+
+    var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+        }
+    }
+
+    var borderColour: UIColor = .clear {
+        didSet {
+            layer.borderColor = borderColour.cgColor
+        }
+    }
+
+    var innerPadding: UIEdgeInsets = .zero {
+        didSet {
+            stackView.layoutMargins = innerPadding
+            stackView.isLayoutMarginsRelativeArrangement = true
+        }
+    }
 
     unowned var group: RadioGroup
 
