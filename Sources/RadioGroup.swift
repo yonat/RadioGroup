@@ -191,6 +191,7 @@ import UIKit
     }
 
     open override var intrinsicContentSize: CGSize {
+        layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         var size = stackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width += layoutMargins.left + layoutMargins.right
         size.height += layoutMargins.top + layoutMargins.bottom
