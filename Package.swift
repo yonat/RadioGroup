@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "RadioGroup",
     platforms: [
-        .iOS(.v9),
+        .iOS(.v13),
     ],
     products: [
         .library(name: "RadioGroup", targets: ["RadioGroup"]),
