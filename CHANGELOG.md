@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.comd/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.orgd/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.4.2] - 2020-11-30
 
 ### Fixed
 - fix build errors when using Swift Package Manager in a non-SwiftUI app.

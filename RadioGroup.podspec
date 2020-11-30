@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RadioGroup"
-  s.version      = "1.4.1"
+  s.version      = "1.4.2"
   s.summary      = "The missing iOS radio buttons group."
 
   s.homepage     = "https://github.com/yonat/RadioGroup"
