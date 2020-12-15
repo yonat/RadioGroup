@@ -23,6 +23,7 @@ radioGroup.addTarget(self, action: #selector(optionSelected), forControlEvents: 
 
 ```swift
 RadioGroupPicker(selectedIndex: $selection, titles: ["One", "Two", "Three"])
+    .fixedSize()
 ```
 
 ## Changing Appearance
