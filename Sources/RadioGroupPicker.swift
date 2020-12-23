@@ -21,6 +21,7 @@ import SwiftUI
         titles: [String]? = nil,
         attributedTitles: [NSAttributedString]? = nil,
         selectedColor: UIColor? = nil,
+        selectedTintColor: UIColor? = nil,
         isVertical: Bool? = nil,
         buttonSize: CGFloat? = nil,
         spacing: CGFloat? = nil,
@@ -34,6 +35,7 @@ import SwiftUI
         uiView.titles =? titles
         uiView.attributedTitles =? attributedTitles
         uiView.selectedColor =? selectedColor
+        uiView.selectedTintColor =? selectedTintColor
         uiView.isVertical =? isVertical
         uiView.buttonSize =? buttonSize
         uiView.spacing =? spacing
