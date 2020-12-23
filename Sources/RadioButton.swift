@@ -11,8 +11,8 @@ import UIKit
     @IBInspectable open var isSelected: Bool = false {
         didSet {
             selectedCenterView.isHidden = !isSelected
-            let borderColor = isSelected ? selectedTintColor : notSelectedTintColor
-            layer.borderColor = borderColor?.cgColor ?? actualTintColor.cgColor
+            let borderColor = isSelected ? selectedTintColor : actualTintColor
+            layer.borderColor = borderColor?.cgColor
             if isSelected {
                 accessibilityTraits.insert(.selected)
             } else {
@@ -56,12 +56,6 @@ import UIKit
         }
     }
 
-    @IBInspectable open dynamic var notSelectedTintColor: UIColor? {
-        didSet {
-            layer.borderColor = notSelectedTintColor?.cgColor ?? actualTintColor.cgColor
-        }
-    }
-
     private let selectedCenterView = UIView()
 
     private func setup() {
@@ -74,7 +68,6 @@ import UIKit
         selectedCenterView.layoutMargins = .zero
         selectedColor = { selectedColor }()
         selectedTintColor = { selectedTintColor }()
-        notSelectedTintColor = { notSelectedTintColor }()
         size = { size }()
         ringWidth = { ringWidth }()
         ringSpacing = { ringSpacing }()
@@ -102,7 +95,7 @@ import UIKit
 
     open override func tintColorDidChange() {
         super.tintColorDidChange()
-        let newTint = actualTintColor
+        let newTint: UIColor = actualTintColor
         layer.borderColor = newTint.cgColor
         if nil == selectedColor {
             selectedCenterView.backgroundColor = newTint
