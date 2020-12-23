@@ -44,6 +44,7 @@ radioGroup.isButtonAfterTitle = true    // default is false => button left (lead
 ```swift
 radioGroup.tintColor = .green       // surrounding ring
 radioGroup.selectedColor = .red     // inner circle (default is same color as ring)
+radioGroup.selectedTintColor = .blue  // selected radio button's surrounding ring (default is black)
 
 radioGroup.titleColor = .blue
 radioGroup.titleFont = myFont
