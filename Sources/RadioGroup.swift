@@ -49,6 +49,18 @@ import UIKit
         }
     }
 
+    @IBInspectable open dynamic var selectedTintColor: UIColor? {
+        didSet {
+            forEachItem { $0.radioButton.selectedTintColor = selectedTintColor }
+        }
+    }
+
+    @IBInspectable open dynamic var notSelectedTintColor: UIColor? {
+        didSet {
+            forEachItem { $0.radioButton.notSelectedTintColor = notSelectedTintColor }
+        }
+    }
+
     @IBInspectable open dynamic var isVertical: Bool = true {
         didSet {
             stackView.axis = isVertical ? .vertical : .horizontal
@@ -119,6 +131,8 @@ import UIKit
 
     private func updateAllItems() {
         selectedColor = { selectedColor }()
+        selectedTintColor = { selectedTintColor }()
+        notSelectedTintColor = { notSelectedTintColor }()
         buttonSize = { buttonSize }()
         itemSpacing = { itemSpacing }()
         isButtonAfterTitle = { isButtonAfterTitle }()
