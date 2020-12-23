@@ -21,6 +21,7 @@ import SwiftUI
         titles: [String]? = nil,
         attributedTitles: [NSAttributedString]? = nil,
         selectedColor: UIColor? = nil,
+        selectedTintColor: UIColor? = nil,
         isVertical: Bool? = nil,
         buttonSize: CGFloat? = nil,
         spacing: CGFloat? = nil,
@@ -28,13 +29,13 @@ import SwiftUI
         isButtonAfterTitle: Bool? = nil,
         titleColor: UIColor? = nil,
         titleAlignment: NSTextAlignment? = nil,
-        titleFont: UIFont? = nil,
-        selectedTintColor: UIColor? = nil
+        titleFont: UIFont? = nil
     ) {
         _selectedIndex = selectedIndex
         uiView.titles =? titles
         uiView.attributedTitles =? attributedTitles
         uiView.selectedColor =? selectedColor
+        uiView.selectedTintColor =? selectedTintColor
         uiView.isVertical =? isVertical
         uiView.buttonSize =? buttonSize
         uiView.spacing =? spacing
@@ -43,7 +44,6 @@ import SwiftUI
         uiView.titleColor =? titleColor
         uiView.titleAlignment =? titleAlignment
         uiView.titleFont =? titleFont
-        uiView.selectedTintColor =? selectedTintColor
     }
 
     public func makeUIView(context: UIViewRepresentableContext<RadioGroupPicker>) -> RadioGroup {

@@ -43,12 +43,14 @@ import UIKit
         }
     }
 
+    /// Color of the inner circle of the selected radio button (nil = same as `tintColor`)
     @IBInspectable open dynamic var selectedColor: UIColor? {
         didSet {
             forEachItem { $0.radioButton.selectedColor = selectedColor }
         }
     }
 
+    /// Color of the outer ring of the selected radio button (nil = same as `tintColor`)
     @IBInspectable open dynamic var selectedTintColor: UIColor? {
         didSet {
             forEachItem { $0.radioButton.selectedTintColor = selectedTintColor }
