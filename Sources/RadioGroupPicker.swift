@@ -48,6 +48,7 @@ import SwiftUI
 
     public func makeUIView(context: UIViewRepresentableContext<RadioGroupPicker>) -> RadioGroup {
         uiView.addTarget(context.coordinator, action: #selector(Coordinator.valueChanged), for: .valueChanged)
+        uiView.translatesAutoresizingMaskIntoConstraints = false
         return uiView
     }
 

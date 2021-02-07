@@ -26,7 +26,7 @@ class ViewController: UIViewController {
             NSAttributedString(string: "Lorem ipsum dolor sit amet"),
             NSAttributedString(string: "consectetur adipiscing elit", attributes: [.strokeWidth: -3.0]),
             NSAttributedString(string: "sed do eiusmod tempor incididunt", attributes: [.obliqueness: 0.3]),
-            NSAttributedString(string: "ut labore et dolore magna aliqua", attributes: [.underlineStyle: 2, .underlineColor: secondGroup.tintColor ?? .orange]),
+            NSAttributedString(string: "ut labore et dolore", attributes: [.underlineStyle: 2, .underlineColor: secondGroup.tintColor ?? .orange]),
         ]
 
         radioGroup.addTarget(self, action: #selector(didSelectOption(radioGroup:)), for: .valueChanged)

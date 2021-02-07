@@ -1,19 +1,19 @@
 PODS:
-  - RadioGroup (1.4.2):
+  - RadioGroup (1.4.3):
     - SweeterSwift
-  - SweeterSwift (1.0.4)
-  - SwiftFormat/CLI (0.40.10)
-  - SwiftLint (0.34.0)
-  - SwiftQuality (1.0.4):
-    - SwiftFormat/CLI (= 0.40.10)
-    - SwiftLint (= 0.34.0)
+  - SweeterSwift (1.1.4)
+  - SwiftFormat/CLI (0.42.0)
+  - SwiftLint (0.40.3)
+  - SwiftQuality (1.0.9):
+    - SwiftFormat/CLI (= 0.42.0)
+    - SwiftLint (= 0.40.3)
 
 DEPENDENCIES:
   - RadioGroup (from `..`)
   - SwiftQuality (from `https://github.com/yonat/SwiftQuality`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - SweeterSwift
     - SwiftFormat
     - SwiftLint
@@ -26,16 +26,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftQuality:
-    :commit: aa5167c9e5a63bb0d9adb8ac3a26ed6444077686
+    :commit: 57dd889e24bb7574051f6fb04e722659b0979908
     :git: https://github.com/yonat/SwiftQuality
 
 SPEC CHECKSUMS:
-  RadioGroup: 3034fa541e831a4c13825a76b7369a5901e4852b
-  SweeterSwift: fe0daffbcf89c9f6e4db1e9159b9c74696b26a13
-  SwiftFormat: d0e2118da5bfccc0158f0b8eff80c476c5acd984
-  SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
-  SwiftQuality: b82257ee3bf1193fd2c01681438d71a5e5ae2f9a
+  RadioGroup: 7015c71759c90dbaae7050f33cfbc1de780e27a7
+  SweeterSwift: 8a90cf3156f5a1b6f39785c479369a16633b5ea9
+  SwiftFormat: 5faa819600268dfaa5c19f1359730883db151678
+  SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
+  SwiftQuality: 50b96acbbc9b08b8c60954b148de013705e6bc66
 
-PODFILE CHECKSUM: 7144c43b8680269cf0cb39fff5d7f5759a72365a
+PODFILE CHECKSUM: 890265268722d35f967524eb91610ef90c1f2af7
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1
