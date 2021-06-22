@@ -20,6 +20,7 @@ import SwiftUI
         selectedIndex: Binding<Int>,
         titles: [String]? = nil,
         attributedTitles: [NSAttributedString]? = nil,
+        tintColor: UIColor? = nil,
         selectedColor: UIColor? = nil,
         selectedTintColor: UIColor? = nil,
         isVertical: Bool? = nil,
@@ -34,6 +35,7 @@ import SwiftUI
         _selectedIndex = selectedIndex
         uiView.titles =? titles
         uiView.attributedTitles =? attributedTitles
+        uiView.tintColor =? tintColor
         uiView.selectedColor =? selectedColor
         uiView.selectedTintColor =? selectedTintColor
         uiView.isVertical =? isVertical
