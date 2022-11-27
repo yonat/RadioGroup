@@ -81,7 +81,7 @@ import UIKit
         selectedCenterView.layer.cornerRadius = (size - layoutMargins.bottom - layoutMargins.top) / 2
     }
 
-    public override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
@@ -91,13 +91,13 @@ import UIKit
         setup()
     }
 
-    open override func tintColorDidChange() {
+    override open func tintColorDidChange() {
         super.tintColorDidChange()
         layer.borderColor = ringColor.cgColor
         selectedCenterView.backgroundColor = selectedColor ?? actualTintColor
     }
 
-    open override var intrinsicContentSize: CGSize {
+    override open var intrinsicContentSize: CGSize {
         return CGSize(width: size, height: size)
     }
 

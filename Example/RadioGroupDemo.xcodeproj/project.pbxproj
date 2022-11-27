@@ -158,7 +158,6 @@
 				DC52B4F32207208D00A01098 /* Resources */,
 				FC00D0AEC88A1BB3E33A4675 /* [CP] Embed Pods Frameworks */,
 				59507210E30274351361BD97 /* [CP-User] SwiftLint */,
-				0B9C56E5112463890E318B11 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -178,7 +177,6 @@
 				DC52B51F22092D5300A01098 /* Frameworks */,
 				DC52B52022092D5300A01098 /* Resources */,
 				14054626CC72ED7D348C42CF /* [CP] Embed Pods Frameworks */,
-				E326B0273C9901855AB33EA8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,23 +250,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0B9C56E5112463890E318B11 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RadioGroupDemo/Pods-RadioGroupDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RadioGroupDemo/Pods-RadioGroupDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RadioGroupDemo/Pods-RadioGroupDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		107229C6E31B2CA9A0476376 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -293,6 +274,7 @@
 		};
 		14054626CC72ED7D348C42CF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -332,54 +314,41 @@
 		};
 		59507210E30274351361BD97 /* [CP-User] SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			name = "[CP-User] SwiftLint";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"Debug\" == \"${CONFIGURATION}\" ]; then \"${PODS_ROOT}/SwiftLint/swiftlint\" --config \"${PODS_ROOT}/SwiftQuality/.swiftlint.yml\" --path \"${SRCROOT}/..\" ; fi";
+			shellScript = "if [ \"Debug\" == \"${CONFIGURATION}\" && ! $ENABLE_PREVIEWS == \"YES\" ]; then \"${PODS_ROOT}/SwiftLint/swiftlint\" --config \"${PODS_ROOT}/SwiftQuality/.swiftlint.yml\" \"${SRCROOT}/..\" ; fi";
 			showEnvVarsInLog = 0;
 		};
 		6D619CBBB906D861B33DF057 /* [CP-User] SwiftLintAutocorrect */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			name = "[CP-User] SwiftLintAutocorrect";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"Debug\" == \"${CONFIGURATION}\" ]; then \"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect --config \"${PODS_ROOT}/SwiftQuality/.swiftlint.yml\" --path \"${SRCROOT}/..\" ; fi";
+			shellScript = "if [[ \"Debug\" == \"${CONFIGURATION}\" && ! $ENABLE_PREVIEWS == \"YES\" ]]; then \"${PODS_ROOT}/SwiftLint/swiftlint\" --fix --config \"${PODS_ROOT}/SwiftQuality/.swiftlint.yml\" \"${SRCROOT}/..\" ; fi";
 		};
 		8F6F33B844A0988E05924D07 /* [CP-User] SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			name = "[CP-User] SwiftFormat";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"Debug\" == \"${CONFIGURATION}\" ]; then \"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" --swiftversion ${SWIFT_VERSION} --config \"${PODS_ROOT}/SwiftQuality/.swiftformat\" \"${SRCROOT}/..\" ; fi";
-		};
-		E326B0273C9901855AB33EA8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RadioGroupDemoUITests/Pods-RadioGroupDemoUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RadioGroupDemoUITests/Pods-RadioGroupDemoUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RadioGroupDemoUITests/Pods-RadioGroupDemoUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "if [[ \"Debug\" == \"${CONFIGURATION}\" && ! $ENABLE_PREVIEWS == \"YES\" ]]; then \"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" --swiftversion ${SWIFT_VERSION} --config \"${PODS_ROOT}/SwiftQuality/.swiftformat\" \"${SRCROOT}/..\" ; fi";
 		};
 		FC00D0AEC88A1BB3E33A4675 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);

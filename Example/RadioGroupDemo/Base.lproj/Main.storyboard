@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,7 +66,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBS-vD-87r">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBS-vD-87r">
                                 <rect key="frame" x="107.5" y="48" width="160" height="26"/>
                                 <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
                                 <state key="normal" title="Show in SwiftUI View"/>
@@ -74,11 +74,21 @@
                                     <action selector="showSwiftUIDemo" destination="BYZ-38-t0r" eventType="touchUpInside" id="kuB-OM-7gM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpv-Md-dHL">
+                                <rect key="frame" x="134" y="617" width="107" height="30"/>
+                                <state key="normal" title="Reset Selection"/>
+                                <connections>
+                                    <action selector="resetSelection" destination="BYZ-38-t0r" eventType="touchUpInside" id="HPA-Sg-gQ5"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PBS-vD-87r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="2I6-3M-oj5"/>
                             <constraint firstItem="A6O-1P-60f" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="41m-mu-Skb"/>
+                            <constraint firstItem="Lpv-Md-dHL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8ce-EQ-Fpi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lpv-Md-dHL" secondAttribute="bottom" constant="20" id="Fob-hb-EWg"/>
                             <constraint firstItem="QNu-Q0-E73" firstAttribute="top" secondItem="A6O-1P-60f" secondAttribute="bottom" constant="50" id="HgA-IV-1r1"/>
                             <constraint firstItem="PBS-vD-87r" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RXI-T1-9tp"/>
                             <constraint firstItem="JdL-tG-jdB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aCf-ey-aRB"/>
@@ -87,7 +97,6 @@
                             <constraint firstItem="QNu-Q0-E73" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="qJw-YF-VWN"/>
                             <constraint firstItem="QNu-Q0-E73" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qfw-dd-PBc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="radioGroup" destination="A6O-1P-60f" id="jO8-AB-X56"/>
@@ -100,4 +109,15 @@
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="A6O-1P-60f">
+            <size key="intrinsicContentSize" width="280" height="117.5"/>
+        </designable>
+        <designable name="JdL-tG-jdB">
+            <size key="intrinsicContentSize" width="24" height="24"/>
+        </designable>
+        <designable name="QNu-Q0-E73">
+            <size key="intrinsicContentSize" width="161.5" height="124"/>
+        </designable>
+    </designables>
 </document>

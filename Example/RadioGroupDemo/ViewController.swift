@@ -56,4 +56,9 @@ class ViewController: UIViewController {
         }
         #endif
     }
+
+    @IBAction func resetSelection() {
+        radioGroup.selectedIndex = -1
+        secondGroup.selectedIndex = -1
+    }
 }

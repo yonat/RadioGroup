@@ -152,7 +152,7 @@ import UIKit
 
     // MARK: - Overrides
 
-    public override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
@@ -162,14 +162,14 @@ import UIKit
         setup()
     }
 
-    open override var intrinsicContentSize: CGSize {
+    override open var intrinsicContentSize: CGSize {
         var size = stackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width += layoutMargins.left + layoutMargins.right
         size.height += layoutMargins.top + layoutMargins.bottom
         return size
     }
 
-    open override func prepareForInterfaceBuilder() {
+    override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         titles = ["First Option", "Second Option", "Third"]
     }
@@ -196,6 +196,7 @@ class RadioGroupItem: UIView {
         setup()
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
