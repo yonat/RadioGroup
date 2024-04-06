@@ -88,7 +88,7 @@ pod 'RadioGroup'
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yonat/RadioGroup", from: "1.4.6")
+    .package(url: "https://github.com/yonat/RadioGroup", from: "1.4.7")
 ]
 ```
 
