@@ -169,6 +169,14 @@ import UIKit
         return size
     }
 
+    override open var semanticContentAttribute: UISemanticContentAttribute {
+        didSet {
+            for item in items {
+                item.semanticContentAttribute = semanticContentAttribute
+            }
+        }
+    }
+
     override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         titles = ["First Option", "Second Option", "Third"]
@@ -235,6 +243,13 @@ class RadioGroupItem: UIView {
             return radioButton.isSelected ? [.selected] : []
         }
         set {} // swiftlint:disable:this unused_setter_value
+    }
+
+    override open var semanticContentAttribute: UISemanticContentAttribute {
+        didSet {
+            titleLabel.semanticContentAttribute = semanticContentAttribute
+            stackView.semanticContentAttribute = semanticContentAttribute
+        }
     }
 }
 

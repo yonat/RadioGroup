@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.comd/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.orgd/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+- Fix layout in right-to-left user interface direction.
+
 ## [1.4.9] - 2024-11-01
 
 ### Fixed
